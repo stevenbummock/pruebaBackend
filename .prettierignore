@@ -76,7 +76,7 @@ web_modules/
 .env.development.local
 .env.test.local
 .env.production.local
-.env.local
+.env.staging
 .cache
 .parcel-cache
 .next
@@ -261,5 +261,3 @@ tags
 next-env.d.ts
 /api/index.js
 /api/index.js.map
-/.env.development
-/.env.production

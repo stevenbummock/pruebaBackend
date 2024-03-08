@@ -74,8 +74,10 @@ web_modules/
 .yarn-integrity
 .env
 .env.development.local
+.env.development
 .env.test.local
 .env.production.local
+.env.production
 .env.local
 .cache
 .parcel-cache
@@ -261,5 +263,4 @@ tags
 next-env.d.ts
 /api/index.js
 /api/index.js.map
-/.env.development
-/.env.production
+!.storybook

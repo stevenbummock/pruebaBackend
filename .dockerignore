@@ -28,7 +28,6 @@ crashlytics-build.properties
 fabric.properties
 .idea/httpRequests
 .idea/caches/build_file_checksums.ser
-/dist
 /.mf
 .vscode/*
 !.vscode/settings.json
@@ -58,7 +57,6 @@ coverage
 bower_components
 .lock-wscript
 build/Release
-node_modules/
 jspm_packages/
 web_modules/
 *.tsbuildinfo
@@ -74,8 +72,10 @@ web_modules/
 .yarn-integrity
 .env
 .env.development.local
+.env.development
 .env.test.local
 .env.production.local
+.env.production
 .env.local
 .cache
 .parcel-cache
@@ -152,10 +152,8 @@ terraform.rc
 /build
 /public/build
 storybook-static/
-dist/
 npm-debug.log
 yarn-error.log
-.DS_Store
 .AppleDouble
 .LSOverride
 Icon
@@ -226,7 +224,6 @@ flycheck_*.el
 .dir-locals.el
 /network-security.data
 /tmp
-/node_modules
 /bower_components
 /.sass-cache
 /connect.lock
@@ -261,5 +258,3 @@ tags
 next-env.d.ts
 /api/index.js
 /api/index.js.map
-/.env.development
-/.env.production
