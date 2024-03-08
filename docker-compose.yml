@@ -1,0 +1,52 @@
+version: '3.7'
+services:
+  dev:
+    container_name: api_dev
+    restart: always
+    build:
+      context: .
+      dockerfile: ./docker/backend/Dockerfile
+      target: development
+    ports:
+      - 8000:8000
+    env_file:
+      - .env.development
+    depends_on:
+      - db
+    volumes:
+      - '/home/node_modules'
+      - '.:/home'
+    networks:
+      prueba_network:
+        ipv4_address: 10.5.0.2
+  prod:
+    container_name: api_prod
+    build:
+      context: .
+      dockerfile: ./docker/backend/Dockerfile
+      target: production
+    ports:
+      - 8000:8000
+    env_file:
+      - .env.production
+  db:
+    image: postgres:15.1
+    container_name: db
+    restart: always
+    env_file:
+      - .env.development
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 5432:5432
+    networks:
+      prueba_network:
+        ipv4_address: 10.5.0.3
+
+networks:
+  prueba_network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
